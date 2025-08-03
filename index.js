@@ -74,12 +74,14 @@ app.post("/uploadImage", (req, res) => {
 })
 
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})
+// app.listen(port, () => {
+//     console.log(`Example app listening on port ${port}`)
+// })
 
 
-
+// app.get("/", (req, res) => {
+//   res.send("Hello from Serverless Express on Vercel!");
+// });
 
 
 
