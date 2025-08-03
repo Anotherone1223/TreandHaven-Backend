@@ -1,4 +1,3 @@
-const serverless = require("serverless-http");
 const express = require('express')
 const mongoose = require('mongoose');
 const cors = require('cors')
@@ -37,14 +36,14 @@ app.use((req, res, next) => {
 
 
 // image upload
-const uploadImage = require("./src/utils/uploadImage")
+const uploadImage = require("../src/utils/uploadImage")
 
 // All Routes
-const authRoutes = require('./src/users/userRoutes')
-const productRoutes = require('./src/products/productsRoute')
-const reviewRoutes = require('./src/reviews/reviewsRouter')
-const orderRoutes = require('./src/orders/orderRoute')
-const statsRoutes = require('./src/stats/statsRoute')
+const authRoutes = require('../src/users/userRoutes')
+const productRoutes = require('../src/products/productsRoute')
+const reviewRoutes = require('../src/reviews/reviewsRouter')
+const orderRoutes = require('../src/orders/orderRoute')
+const statsRoutes = require('../src/stats/statsRoute')
 
 
 
@@ -74,18 +73,15 @@ app.post("/uploadImage", (req, res) => {
         .catch((err) => res.status(500).send(err));
 })
 
-// Export serverless function
-module.exports = serverless(app);
-
 
 // app.listen(port, () => {
 //     console.log(`Example app listening on port ${port}`)
 // })
 
 
-// app.get("/", (req, res) => {
-//   res.send("Hello from Serverless Express on Vercel!");
-// });
+app.get("/", (req, res) => {
+  res.send("Hello from Serverless Express on Vercel!");
+});
 
 
 
