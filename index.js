@@ -18,7 +18,7 @@ app.use(cookieParser())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors({
-    origin: 'https://treand-haven-frontend.vercel.app/',
+    origin: 'https://treand-haven-frontend.vercel.app',
     methods: ["GET", "POST", "PATCH", "DELETE", "PUT"],
     credentials: true,
     allowedHeaders: ["Content-Type", "Authorization"]
@@ -36,14 +36,14 @@ app.use((req, res, next) => {
 
 
 // image upload
-const uploadImage = require("../src/utils/uploadImage")
+const uploadImage = require("./src/utils/uploadImage")
 
 // All Routes
-const authRoutes = require('../src/users/userRoutes')
-const productRoutes = require('../src/products/productsRoute')
-const reviewRoutes = require('../src/reviews/reviewsRouter')
-const orderRoutes = require('../src/orders/orderRoute')
-const statsRoutes = require('../src/stats/statsRoute')
+const authRoutes = require('./src/users/userRoutes')
+const productRoutes = require('./src/products/productsRoute')
+const reviewRoutes = require('./src/reviews/reviewsRouter')
+const orderRoutes = require('./src/orders/orderRoute')
+const statsRoutes = require('./src/stats/statsRoute')
 
 
 
@@ -74,14 +74,9 @@ app.post("/uploadImage", (req, res) => {
 })
 
 
-// app.listen(port, () => {
-//     console.log(`Example app listening on port ${port}`)
-// })
-
-
-app.get("/", (req, res) => {
-  res.send("Hello from Serverless Express on Vercel!");
-});
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
 
 
 
