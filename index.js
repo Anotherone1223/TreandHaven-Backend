@@ -1,3 +1,4 @@
+const serverless = require("serverless-http");
 const express = require('express')
 const mongoose = require('mongoose');
 const cors = require('cors')
@@ -72,6 +73,9 @@ app.post("/uploadImage", (req, res) => {
         .then((url) => res.send(url))
         .catch((err) => res.status(500).send(err));
 })
+
+// Export serverless function
+module.exports = serverless(app);
 
 
 // app.listen(port, () => {
