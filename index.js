@@ -18,7 +18,7 @@ app.use(cookieParser())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://treand-haven-frontend.vercel.app/',
     methods: ["GET", "POST", "PATCH", "DELETE", "PUT"],
     credentials: true,
     allowedHeaders: ["Content-Type", "Authorization"]
@@ -64,7 +64,7 @@ async function main() {
         res.send('Hello World!')
     })
 
-    // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
+    
 }
 
 app.post("/uploadImage", (req, res) => {
