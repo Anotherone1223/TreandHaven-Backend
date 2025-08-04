@@ -37,7 +37,7 @@ router.post("/create-checkout-session", async (req, res) => {
             payment_method_types: ['card'],
             line_items: lineItems,
             mode: 'payment',
-            success_url: "https://treand-haven-frontend.vercel.app?session_id={CHECKOUT_SESSION_ID}",
+            success_url: "https://treand-haven-frontend.vercel.app/success?session_id={CHECKOUT_SESSION_ID}",
             cancel_url: "https://treand-haven-frontend.vercel.app/cancel",
         })
         // console.log(session);
