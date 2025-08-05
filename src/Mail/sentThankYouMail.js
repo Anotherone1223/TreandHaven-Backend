@@ -139,7 +139,7 @@ const sendThankYouEmail = async (email, username) => {
 														<tr>
 															<td class="pad" style="width:100%;padding-right:0px;padding-left:0px;">
 																<div class="alignment" align="center">
-																	<div style="max-width: 170px;"><a href="http://localhost:5173/" target="_blank" style="outline:none" tabindex="-1"><img src="https://68438db55b.imgdist.com/pub/bfra/mbrnypb9/zis/e3j/2km/Black%20Beige%20Modern%20Aesthetic%20Floral%20Initial%20Clothing%20Store%20Logo.png" style="display: block; height: auto; border: 0; width: 100%;" width="170" alt="logo-dark-image" title="logo-dark-image" height="auto"></a></div>
+																	<div style="max-width: 170px;"><a href="https://treand-haven-frontend.vercel.app/" target="_blank" style="outline:none" tabindex="-1"><img src="https://68438db55b.imgdist.com/pub/bfra/mbrnypb9/zis/e3j/2km/Black%20Beige%20Modern%20Aesthetic%20Floral%20Initial%20Clothing%20Store%20Logo.png" style="display: block; height: auto; border: 0; width: 100%;" width="170" alt="logo-dark-image" title="logo-dark-image" height="auto"></a></div>
 																</div>
 															</td>
 														</tr>
