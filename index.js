@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const allowedOrigins = [
-  'https://treand-haven-frontend.vercel.app',
+  'https://treand-haven.vercel.app',
   'http://localhost:5173' // for local testing
 ];
 

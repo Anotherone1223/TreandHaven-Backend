@@ -3,7 +3,7 @@ const nodemailer = require("nodemailer");
 const sendInvoiceEmail = async ({ email, products, totalAmount, orderId,mongoOrderId  }) => {
 
     console.log("Email Products Data:", products);
-    const orderLink = `https://treand-haven-frontend.vercel.app/orders/${mongoOrderId }`; // Replace with your real domain
+    const orderLink = `https://treand-haven.vercel.app/orders/${mongoOrderId }`; // Replace with your real domain
     try {
         let transporter = nodemailer.createTransport({
             host: "smtp.gmail.com",
@@ -224,7 +224,7 @@ const sendInvoiceEmail = async ({ email, products, totalAmount, orderId,mongoOrd
 														<tr>
 															<td class="pad" style="width:100%;padding-right:0px;padding-left:0px;">
 																<div class="alignment" align="center">
-																	<div style="max-width: 170px;"><a href="https://treand-haven-frontend.vercel.app/" target="_blank" style="outline:none" tabindex="-1"><img src="https://d15k2d11r6t6rl.cloudfront.net/pub/bfra/mbrnypb9/eyv/lib/7ak/Black%20Beige%20Modern%20Aesthetic%20Floral%20Initial%20Clothing%20Store%20Logo%20%281%29.png" style="display: block; height: auto; border: 0; width: 100%;" width="170" alt title height="auto"></a></div>
+																	<div style="max-width: 170px;"><a href="https://treand-haven.vercel.app/" target="_blank" style="outline:none" tabindex="-1"><img src="https://d15k2d11r6t6rl.cloudfront.net/pub/bfra/mbrnypb9/eyv/lib/7ak/Black%20Beige%20Modern%20Aesthetic%20Floral%20Initial%20Clothing%20Store%20Logo%20%281%29.png" style="display: block; height: auto; border: 0; width: 100%;" width="170" alt title height="auto"></a></div>
 																</div>
 															</td>
 														</tr>
@@ -602,7 +602,7 @@ const sendInvoiceEmail = async ({ email, products, totalAmount, orderId,mongoOrd
 														<tr>
 															<td class="pad" style="padding-bottom:20px;padding-left:10px;padding-right:10px;padding-top:10px;">
 																<div style="color:#fbfbfb;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;font-size:14px;line-height:1.8;text-align:left;mso-line-height-alt:25px;">
-																	<p style="margin: 0; word-break: break-word;"><a href="https://treand-haven-frontend.vercel.app/shop" target="_blank" style="text-decoration: none; color: #ffffff;" rel="noopener">Products</a></p>
+																	<p style="margin: 0; word-break: break-word;"><a href="https://treand-haven.vercel.app/shop" target="_blank" style="text-decoration: none; color: #ffffff;" rel="noopener">Products</a></p>
 																</div>
 															</td>
 														</tr>
@@ -611,7 +611,7 @@ const sendInvoiceEmail = async ({ email, products, totalAmount, orderId,mongoOrd
 														<tr>
 															<td class="pad" style="padding-bottom:20px;padding-left:10px;padding-right:10px;padding-top:10px;">
 																<div style="color:#fbfbfb;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;font-size:14px;line-height:1.8;text-align:left;mso-line-height-alt:25px;">
-																	<p style="margin: 0; word-break: break-word;"><a href="https://treand-haven-frontend.vercel.app/contact" target="_blank" style="text-decoration: none; color: #ffffff;" rel="noopener">Contact us</a></p>
+																	<p style="margin: 0; word-break: break-word;"><a href="https://treand-haven.vercel.app/contact" target="_blank" style="text-decoration: none; color: #ffffff;" rel="noopener">Contact us</a></p>
 																</div>
 															</td>
 														</tr>
