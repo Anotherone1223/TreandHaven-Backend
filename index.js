@@ -12,10 +12,23 @@ app.use(express.json({ limit: "25mb" }));
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+const allowedOrigins = [
+  'https://treand-haven-frontend.vercel.app',
+  'http://localhost:5173' // for local testing
+];
+
 app.use(cors({
-  origin: 'https://treand-haven-frontend.vercel.app',
-  methods: ["GET", "POST", "PATCH", "DELETE", "PUT"],
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl)
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
+  methods: ["GET", "POST", "PATCH", "DELETE", "PUT"],
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
@@ -53,16 +66,25 @@ app.post("/uploadImage", (req, res) => {
     .catch((err) => res.status(500).send(err));
 });
 
-// MongoDB Connection (only once)
-let isConnected = false;
-const connectToDB = async () => {
-  if (!isConnected) {
-    await mongoose.connect(process.env.DB_URL);
-    console.log("MongoDB is connected");
-    isConnected = true;
+// ✅ MongoDB Connection (Vercel-safe with caching)
+let cachedDb = null;
+
+async function connectToDB() {
+  if (cachedDb) return cachedDb;
+
+  try {
+    const conn = await mongoose.connect(process.env.DB_URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log('✅ MongoDB connected');
+    cachedDb = conn;
+    return conn;
+  } catch (error) {
+    console.error('❌ DB Connection Error:', error);
+    throw error;
   }
-};
-connectToDB();
+}
 
 // Export the app for Vercel serverless
 module.exports = app;
